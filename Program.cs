@@ -8,11 +8,11 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            var startDate = new DateTime(2023, 10, 15);
+            var startDate = new DateTime(2024, 01, 01);
             var endDate = new DateTime(2024, 04, 15);
 
-            //DisplayZenFlexDaysForPeriodAsync(startDate, endDate);
-            await CreateJsonForPeriodAsync(startDate, endDate);
+            await DisplayZenFlexDaysForPeriodAsync(startDate, endDate);
+            //await CreateJsonForPeriodAsync(startDate, endDate);
         }
 
         static async Task DisplayZenFlexDaysForPeriodAsync(DateTime startDate, DateTime endDate)
@@ -27,7 +27,7 @@ namespace ConsoleApp1
 
                     if (dayType == "ZENF_PM")
                     {
-                        Console.WriteLine($"{startDate.ToString("yyyy-MM-dd")},");
+                        Console.WriteLine($"\"{startDate.ToString("yyyy/MM/dd")}\",");
                         zenFlexCount++;
                     }
                     startDate = startDate.AddDays(1);
